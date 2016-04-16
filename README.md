@@ -29,7 +29,8 @@ Snippet 1 - Big O:
 ```
 
 **Answer: O(n)**
-_This is one loop through the array for each element, therefore it is linear_
+
+_This is one loop through the array for each element, therefore it is linear._
 
 Snippet 2 - Big O:
 ```ruby
@@ -45,7 +46,8 @@ Snippet 2 - Big O:
 ```
 
 **Answer: O(1)**
-_This has no loops, and no matter how much data we have, the amount of time to execute this method will be constant_
+
+_This has no loops, and no matter how much data we have, the amount of time to execute this method will be constant._
 
 
 Snippet 3 - Big O:
@@ -54,8 +56,8 @@ Snippet 3 - Big O:
  +  	# split word and put letters in array
  +    until @letter_array.length == @word.length
  +      	@word.split("").each do |letter|
- +    	@letter_array.push(letter)
- +      end
+ +    			@letter_array.push(letter)
+ +      	end
  +    	word_length = @letter_array.length
  +    	word_length.times do
  +    		@dashes_array.push("_ ")
@@ -67,6 +69,10 @@ Snippet 3 - Big O:
  +    # draws blank spaces or correct guesses under ice cream
  +  end
 ```
+
+**Answer: O(n^2)**
+
+_Struggling with whether this is O(log(n)) or O(n^2), but I am thinking the latter because as the word or arrays get larger, the time it takes to go through all those loops is exponential._
 
 Snippet 4 - Big O:
 ```ruby
