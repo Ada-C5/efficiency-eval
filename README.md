@@ -28,6 +28,9 @@ Snippet 1 - Big O:
  +end
 ```
 
+**Answer: O(n)**
+_This is one loop through the array for each element, therefore it is linear_
+
 Snippet 2 - Big O:
 ```ruby
 +  def lose?
@@ -40,6 +43,10 @@ Snippet 2 - Big O:
  +    end
  +  end
 ```
+
+**Answer: O(1)**
+_This has no loops, and no matter how much data we have, the amount of time to execute this method will be constant_
+
 
 Snippet 3 - Big O:
 ```ruby
