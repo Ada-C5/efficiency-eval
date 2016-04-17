@@ -70,9 +70,9 @@ Snippet 3 - Big O:
  +  end
 ```
 
-**Answer: O(n^3)**
+**Answer: O(n^4)**
 
-_Struggling with this one, as I am not sure about the ```until loop``` with 2 nested ```.each``` loops, but I am thinking the ```until``` loop also counts as O(n). The loop outside of everything also has O(n), but I am thinking we need to consider the worse case here, so just the three loops. Otherwise, this would be O(n^4)._
+_Struggling with this one, as I am not sure about the ```until loop``` with 2 nested ```.each``` loops, but I am thinking the ```until``` loop also counts as O(n). The loop outside of everything also has O(n), so I am going with O(n^4) here. Not sure if by "worst case" we just need to consider the part with the worst efficiency, or the entire method here. I'm going with the entire method!_
 
 Snippet 4 - Big O:
 ```ruby
@@ -165,6 +165,10 @@ for j in 2..num.length
 	num[i+1] = key
 end
 ```
+
+**Answer: O(n^2)**
+
+_There is a ```for``` loop and a ```while``` loop here, but it's difficult to say how long this would take because it depends on what ```num``` is. If it's something passed to a method, if someone put in an array with the length that was thousands or millions, this could take a really long time to go through. There isn't much here that determines exactly when the loop should end, so it depends on ```num``` and its length. Side note - wondering if this is where O(log(n)) comes in?_
 
 Snippet 8 - Big O:
 ```ruby
