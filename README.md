@@ -63,7 +63,7 @@ Snippet 3 - Big O:  O(n^2)
  +  end
 ```
 
-Snippet 4 - Big O:  O(n) (assuming that analyze_mood(entry) doesn't contain a bunch of loops...)
+Snippet 4 - Big O:  O(n^2) (there's an each loop in analyze_mood, which is called within this each loop)
 ```ruby
 def overall_mood(entries)
   return nil if entries.length == 0
@@ -76,7 +76,7 @@ def overall_mood(entries)
 end
 ```
 
-Snippet 5 - Big O:  O(n)
+Snippet 5 - Big O:  O(n^2) (there's an each loop in analyze_mood)
 ```ruby
 +def overall_mood
  +  all = {
@@ -100,7 +100,7 @@ Snippet 5 - Big O:  O(n)
  +end
 ```
 
-Snippet 6 - Big O:  O(n)
+Snippet 6 - Big O:  O(n^2) (there's an each loop in analyze_mood)
 ```ruby
 +def overall_mood(array)
  +  happy_moods = []
