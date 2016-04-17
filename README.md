@@ -47,7 +47,7 @@ Snippet 2 - Big O:
 
 **Answer: O(1)**
 
-_This has no loops, and no matter how much data we have, the amount of time to execute this method will be constant._
+_This has no loops, so no matter how much data we have, the amount of time to execute this method should be constant._
 
 
 Snippet 3 - Big O:
@@ -70,9 +70,9 @@ Snippet 3 - Big O:
  +  end
 ```
 
-**Answer: O(n^2)**
+**Answer: O(n^3)**
 
-_Struggling with whether this is O(log(n)) or O(n^2), but I am thinking the latter because as the word or arrays get larger, the time it takes to go through all those loops is exponential._
+_Struggling with this one, as I am not sure about the ```until loop``` with 2 nested ```.each``` loops, but I am thinking the ```until``` loop also counts as O(n). The loop outside of everything also has O(n), but I am thinking we need to consider the worse case here, so just the three loops. Otherwise, this would be O(n^4)._
 
 Snippet 4 - Big O:
 ```ruby
@@ -115,6 +115,10 @@ Snippet 5 - Big O:
  +end
 ```
 
+**Answer: O(n^2)**
+
+_Again we have two nested looped since the ```analyze_mood``` method has a loop inside of it. The ```.max_by``` here is the same as the above snippet - although it is essentially 2 loops, they happen together and so the other loops are considered "worst case"._
+
 Snippet 6 - Big O:
 ```ruby
 +def overall_mood(array)
@@ -144,6 +148,10 @@ Snippet 6 - Big O:
  +  end
  +end
 ```
+
+**Answer: O(n^2)**
+
+_And again we have two nested looped since the ```analyze_mood``` method has a loop inside of it._
 
 Snippet 7 - Big O:
 ```ruby
