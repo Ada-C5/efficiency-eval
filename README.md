@@ -70,9 +70,11 @@ Snippet 3 - Big O:
  +  end
 ```
 
-**Answer: O(n^4)**
+**Answer: O(n^3)**
 
-_Struggling with this one, as I am not sure about the ```until loop``` with 2 nested ```.each``` loops, but I am thinking the ```until``` loop also counts as O(n). The loop outside of everything also has O(n), so I am going with O(n^4) here. Not sure if by "worst case" we just need to consider the part with the worst efficiency, or the entire method here. I'm going with the entire method!_
+_Struggling with this one, as I am not sure about the ```until loop``` with 2 nested ```.each``` loops, but I am thinking the ```until``` loop also counts.
+
+The loop outside of everything also has O(n). Not sure if by "worst case" we just need to consider the part with the worst efficiency, which is O(n^3), or the entire method here. I've changed my mind many times here, but just going with the part that has 3 nested loops. Something tells me O(n^3) + O(n) is still O(n^3), but I could be making up math._
 
 Snippet 4 - Big O:
 ```ruby
@@ -168,7 +170,7 @@ end
 
 **Answer: O(n^2)**
 
-_There is a ```for``` loop and a ```while``` loop here, but it's difficult to say how long this would take because it depends on what ```num``` is. If it's something passed to a method, if someone put in an array with the length that was thousands or millions, this could take a really long time to go through. There isn't much here that determines exactly when the loop should end, so it depends on ```num``` and its length. Side note - wondering if this is where O(log(n)) comes in?_
+_There is a ```for``` loop and a ```while``` loop here, but it's difficult to say how long this would take because it depends on what ```num``` contains. This looks like what insertion sorting does._
 
 Snippet 8 - Big O:
 ```ruby
@@ -181,6 +183,10 @@ n.times do |i|
   a[i], a[index_min] = a[index_min], a[i] if index_min != i
 end
 ```
+
+**Answer: O(n^2)**
+
+_This looks like a selection sort, and there are two loops here. _
 
 Snippet 9 - Big O:
 ```java
@@ -201,6 +207,10 @@ public int[] sort(int[] toSort) {
   return toSort;
 }
 ```
+
+**Answer: O(n^2)**
+
+_Honestly super confused by this because it's java and I get a ton of errors even trying to run it in a repl to see what is happening, but since it appears there are 2 loops I'm going with O(n^2)._
 
 Snippet 10 - Big O:
 ```java
@@ -256,3 +266,7 @@ public class GoBozo {
 	}
 }
 ```
+
+**Answer: O(n^2)**
+
+_Again, super confused by java, but I see two methods here, one that called the other method, which has two loops, then iterates through another loop. However, there aren't 3 nested arrays, so like snippet 3, confused as to whether this would be O(n^2) or O(n^3). Since the third loop is not nested it has O(n) I believe, so same maybe made-up math is what I'm applying here._
