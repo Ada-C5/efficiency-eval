@@ -19,7 +19,7 @@ Snippet EX - Big O: Answer given for this first example: O(n^2)
  +  end
 ```
 
-Snippet 1 - Big O:  O(n)
+Snippet 1 - Big O:  O(n) (due to length of array)
 ```ruby
 +def print_rainbow(array)
  +  array.each do |element|
@@ -30,7 +30,7 @@ Snippet 1 - Big O:  O(n)
  +end
 ```
 
-Snippet 2 - Big O:  O(n)
+Snippet 2 - Big O:  O(n) (due to length of answer_validation_array)
 ```ruby
 +  def lose?
  +    if @number_of_guesses == 0
@@ -43,13 +43,13 @@ Snippet 2 - Big O:  O(n)
  +  end
 ```
 
-Snippet 3 - Big O:  O(n^2)
+Snippet 3 - Big O:  O(n) (@letter_array.length will always == @word.length due to the inner @word.split.each loop, so the outer until loop will only ever happen once before its condition is met.)
 ```ruby
 +  def draw_guesses
  +  	# split word and put letters in array
  +    until @letter_array.length == @word.length
- +      	@word.split("").each do |letter|
- +    	@letter_array.push(letter)
+ +      @word.split("").each do |letter|
+ +    	  @letter_array.push(letter)
  +      end
  +    	word_length = @letter_array.length
  +    	word_length.times do
@@ -63,7 +63,7 @@ Snippet 3 - Big O:  O(n^2)
  +  end
 ```
 
-Snippet 4 - Big O:  O(n^2) (there's an each loop in analyze_mood, which is called within this each loop)
+Snippet 4 - Big O:  O(n * m) (there are two independent variables here, the number of entries (n) and the number of words per entry (m).  They won't necessarily change proportionately, so they should be represented independently)
 ```ruby
 def overall_mood(entries)
   return nil if entries.length == 0
@@ -76,7 +76,7 @@ def overall_mood(entries)
 end
 ```
 
-Snippet 5 - Big O:  O(n^2) (there's an each loop in analyze_mood)
+Snippet 5 - Big O:  O(n * m) (same reason as snippet 4)
 ```ruby
 +def overall_mood
  +  all = {
@@ -100,7 +100,7 @@ Snippet 5 - Big O:  O(n^2) (there's an each loop in analyze_mood)
  +end
 ```
 
-Snippet 6 - Big O:  O(n^2) (there's an each loop in analyze_mood)
+Snippet 6 - Big O:  O(n * m) (same reason as snippet 4)
 ```ruby
 +def overall_mood(array)
  +  happy_moods = []
@@ -130,7 +130,7 @@ Snippet 6 - Big O:  O(n^2) (there's an each loop in analyze_mood)
  +end
 ```
 
-Snippet 7 - Big O: O(n^2)
+Snippet 7 - Big O: O(n) (the while loop will only ever execute once per round of the for loop, because assigning num[i+1] = num[i] after entering the while loop guarantees that the num[i] > key condition will always be false the next time around.)
 ```ruby
 for j in 2..num.length
 	key = num[j]
@@ -143,7 +143,7 @@ for j in 2..num.length
 end
 ```
 
-Snippet 8 - Big O: O(n^2)
+Snippet 8 - Big O: O(n^2) (the outer times loop will go n times, and the inner loop will go a number of times proportional to n)
 ```ruby
 n.times do |i|
   index_min = i
@@ -155,7 +155,7 @@ n.times do |i|
 end
 ```
 
-Snippet 9 - Big O:  O(n^2)
+Snippet 9 - Big O:  O(n^2) (inner and outer loops will both run a number of times proportional to n)
 ```java
 public int[] sort(int[] toSort) {
   for (int i = 0; i < toSort.length -1; i++) {
