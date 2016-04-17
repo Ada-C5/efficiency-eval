@@ -87,6 +87,10 @@ def overall_mood(entries)
 end
 ```
 
+**Answer: O(n^2)**
+
+_The ```analyze_mood``` method has a loop in it (from our example in the mood analysis). The method here has another ```.each``` loop. At the return, the ```.max_by``` loop is actually two loops, as it does a ```.each``` loop as well (as an enumerable), but from my understanding these happen together. We are looking at the worst case, which is the first loop with the ```analyze_mood``` method that has another loop. Nested loops like this have O(n^2)._
+
 Snippet 5 - Big O:
 ```ruby
 +def overall_mood
