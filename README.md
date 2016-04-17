@@ -72,9 +72,10 @@ Snippet 3 - Big O:
 
 **Answer: O(n^3)**
 
-_Struggling with this one, as I am not sure about the ```until loop``` with 2 nested ```.each``` loops, but I am thinking the ```until``` loop also counts.
+_Struggling with this one, as I am not sure about the ```until loop``` with 2 nested ```.each``` loops, but I am thinking the ```until``` loop also counts._
 
-The loop outside of everything also has O(n). Not sure if by "worst case" we just need to consider the part with the worst efficiency, which is O(n^3), or the entire method here. I've changed my mind many times here, but just going with the part that has 3 nested loops. Something tells me O(n^3) + O(n) is still O(n^3), but I could be making up math._
+
+_The loop outside of everything also has O(n). Not sure if by "worst case" we just need to consider the part with the worst efficiency, which is O(n^3), or the entire method here. I've changed my mind many times here, but just going with the part that has 3 nested loops. Something tells me O(n^3) + O(n) is still O(n^3), but I could be making up math._
 
 Snippet 4 - Big O:
 ```ruby
@@ -186,7 +187,7 @@ end
 
 **Answer: O(n^2)**
 
-_This looks like a selection sort, and there are two loops here. _
+_This looks like a selection sort, and there are two loops here._
 
 Snippet 9 - Big O:
 ```java
