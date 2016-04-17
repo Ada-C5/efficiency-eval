@@ -28,6 +28,10 @@ Snippet 1 - Big O:
  +end
 ```
 
+**Answer: O(n)**
+
+_This is one loop through the array for each element, therefore it is linear._
+
 Snippet 2 - Big O:
 ```ruby
 +  def lose?
@@ -41,14 +45,19 @@ Snippet 2 - Big O:
  +  end
 ```
 
+**Answer: O(1)**
+
+_This has no loops, so no matter how much data we have, the amount of time to execute this method should be constant._
+
+
 Snippet 3 - Big O:
 ```ruby
 +  def draw_guesses
  +  	# split word and put letters in array
  +    until @letter_array.length == @word.length
  +      	@word.split("").each do |letter|
- +    	@letter_array.push(letter)
- +      end
+ +    			@letter_array.push(letter)
+ +      	end
  +    	word_length = @letter_array.length
  +    	word_length.times do
  +    		@dashes_array.push("_ ")
@@ -60,6 +69,13 @@ Snippet 3 - Big O:
  +    # draws blank spaces or correct guesses under ice cream
  +  end
 ```
+
+**Answer: O(n^3)**
+
+_Struggling with this one, as I am not sure about the ```until loop``` with 2 nested ```.each``` loops, but I am thinking the ```until``` loop also counts._
+
+
+_The loop outside of everything also has O(n). Not sure if by "worst case" we just need to consider the part with the worst efficiency, which is O(n^3), or the entire method here. I've changed my mind many times here, but just going with the part that has 3 nested loops. Something tells me O(n^3) + O(n) is still O(n^3), but I could be making up math._
 
 Snippet 4 - Big O:
 ```ruby
@@ -73,6 +89,10 @@ def overall_mood(entries)
   return emoticons.max_by{|k,v| v}[0]
 end
 ```
+
+**Answer: O(n^2)**
+
+_The ```analyze_mood``` method has a loop in it (from our example in the mood analysis). The method here has another ```.each``` loop. At the return, the ```.max_by``` loop is actually two loops, as it does a ```.each``` loop as well (as an enumerable), but from my understanding these happen together. We are looking at the worst case, which is the first loop with the ```analyze_mood``` method that has another loop. Nested loops like this have O(n^2)._
 
 Snippet 5 - Big O:
 ```ruby
@@ -97,6 +117,10 @@ Snippet 5 - Big O:
  +  puts "#{largest.keys} is most common mood"
  +end
 ```
+
+**Answer: O(n^2)**
+
+_Again we have two nested looped since the ```analyze_mood``` method has a loop inside of it. The ```.max_by``` here is the same as the above snippet - although it is essentially 2 loops, they happen together and so the other loops are considered "worst case"._
 
 Snippet 6 - Big O:
 ```ruby
@@ -128,6 +152,10 @@ Snippet 6 - Big O:
  +end
 ```
 
+**Answer: O(n^2)**
+
+_And again we have two nested looped since the ```analyze_mood``` method has a loop inside of it._
+
 Snippet 7 - Big O:
 ```ruby
 for j in 2..num.length
@@ -141,6 +169,10 @@ for j in 2..num.length
 end
 ```
 
+**Answer: O(n^2)**
+
+_There is a ```for``` loop and a ```while``` loop here, but it's difficult to say how long this would take because it depends on what ```num``` contains. This looks like what insertion sorting does._
+
 Snippet 8 - Big O:
 ```ruby
 n.times do |i|
@@ -152,6 +184,10 @@ n.times do |i|
   a[i], a[index_min] = a[index_min], a[i] if index_min != i
 end
 ```
+
+**Answer: O(n^2)**
+
+_This looks like a selection sort, and there are two loops here._
 
 Snippet 9 - Big O:
 ```java
@@ -172,6 +208,10 @@ public int[] sort(int[] toSort) {
   return toSort;
 }
 ```
+
+**Answer: O(n^2)**
+
+_Honestly super confused by this because it's java and I get a ton of errors even trying to run it in a repl to see what is happening, but since it appears there are 2 loops I'm going with O(n^2)._
 
 Snippet 10 - Big O:
 ```java
@@ -227,3 +267,7 @@ public class GoBozo {
 	}
 }
 ```
+
+**Answer: O(n^2)**
+
+_Again, super confused by java, but I see two methods here, one that called the other method, which has two loops, then iterates through another loop. However, there aren't 3 nested arrays, so like snippet 3, confused as to whether this would be O(n^2) or O(n^3). Since the third loop is not nested it has O(n) I believe, so same maybe made-up math is what I'm applying here._
