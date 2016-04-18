@@ -17,7 +17,7 @@ Snippet EX - Big O: Answer given for this first example: O(n^2)
  +  end
 ```
 
-Snippet 1 - Big O:
+Snippet 1 - Big O: Answer is Linear O(n). It is a array of hashes. It is iterating through each hash, within more hashes, more time it takes. The process getting the first element of the array keys, is Constant. O(n) + O(1)
 ```ruby
 +def print_rainbow(array)
  +  array.each do |element|
@@ -28,7 +28,7 @@ Snippet 1 - Big O:
  +end
 ```
 
-Snippet 2 - Big O:
+Snippet 2 - Big O: It is Lineal O(1). If you increase the number of elements in the array, the time increases too. I measure it with Benchmark, although I am not sure, because it could be a constant???
 ```ruby
 +  def lose?
  +    if @number_of_guesses == 0
@@ -41,7 +41,7 @@ Snippet 2 - Big O:
  +  end
 ```
 
-Snippet 3 - Big O:
+Snippet 3 - Big O: one each-loop  == O(n), + a times loop is Linear too O(n), +  another each-loop (not nested) == O(n). I would say the general Big O is O(n). Mmmm doubting thou, the loops are not nested, but the times loop depends on the size of the previous array...
 ```ruby
 +  def draw_guesses
  +  	# split word and put letters in array
@@ -61,7 +61,7 @@ Snippet 3 - Big O:
  +  end
 ```
 
-Snippet 4 - Big O:
+Snippet 4 - Big O: one each-loop == O(n), + one enumerable(max_by), which is a each-loop == O(n), + by last a constant extraction of the element the [0] position == O(1). Big O = O(n)
 ```ruby
 def overall_mood(entries)
   return nil if entries.length == 0
@@ -74,7 +74,7 @@ def overall_mood(entries)
 end
 ```
 
-Snippet 5 - Big O:
+Snippet 5 - Big O: one each-loop == O(n), + one enumerable(max_by), which is a each-loop == O(n). Accessing the hash values is O(n). But the conditional? How does it affect the efficiency?. one more time the last loop size depends on the result of the other loop... but they are no nested... I give it a Big O of O(n) since I read in the internet "It runs slower the more things you give it, but that should grow at a predictable rate"
 ```ruby
 +def overall_mood
  +  all = {
@@ -98,7 +98,7 @@ Snippet 5 - Big O:
  +end
 ```
 
-Snippet 6 - Big O:
+Snippet 6 - Big O: efficiency would depend on array size, the bigger the array, the more times it would take Big O = O(n)
 ```ruby
 +def overall_mood(array)
  +  happy_moods = []
@@ -128,8 +128,10 @@ Snippet 6 - Big O:
  +end
 ```
 
-Snippet 7 - Big O:
+Snippet 7 - Big O: I measure it with Benchmark and it looks constant to me. I guess it is because there is not really any looping, just index positioning
+?
 ```ruby
+num = (1..10).to_a
 for j in 2..num.length
 	key = num[j]
 	i = j - 1
@@ -141,8 +143,9 @@ for j in 2..num.length
 end
 ```
 
-Snippet 8 - Big O:
+Snippet 8 - Big O: I would say that since it depends on the size of n, so... linear O(n). Although, there is another linear loop nested in there, so the final Big O is O(n^2)
 ```ruby
+n= 10
 n.times do |i|
   index_min = i
   (i + 1).upto(n) do |j|
@@ -153,7 +156,7 @@ n.times do |i|
 end
 ```
 
-Snippet 9 - Big O:
+Snippet 9 - Big O: There is nested loop that is a is a O(n^2)
 ```java
 public int[] sort(int[] toSort) {
   for (int i = 0; i < toSort.length -1; i++) {
@@ -173,7 +176,7 @@ public int[] sort(int[] toSort) {
 }
 ```
 
-Snippet 10 - Big O:
+Snippet 10 - Big O: since in the comments says 'not recommended for large  arrays, I assume it is O(n^2) or O(2^n) 😎
 ```java
 import java.util.Random;
 
