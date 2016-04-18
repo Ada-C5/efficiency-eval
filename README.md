@@ -9,6 +9,9 @@
 Give the efficiency of each of the following code snippets
 
 Snippet EX - Big O: Answer given for this first example: O(n^2)
+
+# Big O(n^2)
+
 ```ruby
 +  rainbow.each do |item|
  +    item.each do |key, value|
@@ -17,10 +20,10 @@ Snippet EX - Big O: Answer given for this first example: O(n^2)
  +  end
 ```
 
-Snippet 1 - Big O:
+Snippet 1 - Big O:(1)
 ```ruby
 +def print_rainbow(array)
- +  array.each do |element|
+ +  array.each do |element| # loop
  +    color = element.keys
  +    color_string = color[0].to_s
  +    puts color_string.colorize(color[0])
@@ -28,7 +31,7 @@ Snippet 1 - Big O:
  +end
 ```
 
-Snippet 2 - Big O:
+Snippet 2 - Big O:(1)
 ```ruby
 +  def lose?
  +    if @number_of_guesses == 0
@@ -41,40 +44,40 @@ Snippet 2 - Big O:
  +  end
 ```
 
-Snippet 3 - Big O:
+Snippet 3 - Big O:(n^2)
 ```ruby
 +  def draw_guesses
  +  	# split word and put letters in array
- +    until @letter_array.length == @word.length
- +      	@word.split("").each do |letter|
+ +    until @letter_array.length == @word.length # loop
+ +      	@word.split("").each do |letter| # loop
  +    	@letter_array.push(letter)
  +      end
- +    	word_length = @letter_array.length
- +    	word_length.times do
+ +    	word_length = @letter_array.length # loop
+ +    	word_length.times do # loop
  +    		@dashes_array.push("_ ")
  +    	end
  +    end
- +		@dashes_array.each do |dash|
+ +		@dashes_array.each do |dash| # loop
  +			print dash
  +		end
  +    # draws blank spaces or correct guesses under ice cream
  +  end
 ```
 
-Snippet 4 - Big O:
+Snippet 4 - Big O:(n)
 ```ruby
 def overall_mood(entries)
   return nil if entries.length == 0
   emoticons = Hash.new(0)
-  entries.each do |entry|
+  entries.each do |entry| # loop
     emoticon = analyze_mood(entry)
     emoticons[emoticon] += 1
   end
-  return emoticons.max_by{|k,v| v}[0]
+  return emoticons.max_by{|k,v| v}[0] # loop
 end
 ```
 
-Snippet 5 - Big O:
+Snippet 5 - Big O:(n^2)
 ```ruby
 +def overall_mood
  +  all = {
@@ -82,7 +85,7 @@ Snippet 5 - Big O:
  +    negative: 0,
  +    meh: 0
  +  }
- +  text.each do |aline|
+ +  text.each do |aline| #loop
  +    line = strip_punctuation(aline)
  +    face = analyze_mood(line)
  +    if face == ":-)"
@@ -93,18 +96,18 @@ Snippet 5 - Big O:
  +      all[:meh] +=1
  +    end
  +  end
- +  largest = all.max_by{|key, value| value}
+ +  largest = all.max_by{|key, value| value} #loop
  +  puts "#{largest.keys} is most common mood"
  +end
 ```
 
-Snippet 6 - Big O:
+Snippet 6 - Big O:(n^2)
 ```ruby
 +def overall_mood(array)
  +  happy_moods = []
  +  sad_moods = []
  +  neutral_moods =[]
- +  array.each do |line|
+ +  array.each do |line| # loop
  +    moods = analyze_mood(line)
  +    if moods == ":-)"
  +      happy_moods << moods
@@ -114,9 +117,9 @@ Snippet 6 - Big O:
  +      neutral_moods << moods
  +    end
  +  end
- +  happy_length = happy_moods.length
- +  sad_length = sad_moods.length
- +  neutral_length = neutral_moods.length
+ +  happy_length = happy_moods.length # loop
+ +  sad_length = sad_moods.length # loop
+ +  neutral_length = neutral_moods.length # loop
  +
  +  if happy_length > sad_length && happy_length > neutral_length
  +    return "The most common mood is :-)"
@@ -128,7 +131,7 @@ Snippet 6 - Big O:
  +end
 ```
 
-Snippet 7 - Big O:
+Snippet 7 - Big O:(n^) (insertion sort)
 ```ruby
 for j in 2..num.length
 	key = num[j]
@@ -141,7 +144,7 @@ for j in 2..num.length
 end
 ```
 
-Snippet 8 - Big O:
+Snippet 8 - Big O:(n^2) selection sort
 ```ruby
 n.times do |i|
   index_min = i
@@ -153,7 +156,7 @@ n.times do |i|
 end
 ```
 
-Snippet 9 - Big O:
+Snippet 9 - Big O:(n^2)
 ```java
 public int[] sort(int[] toSort) {
   for (int i = 0; i < toSort.length -1; i++) {
@@ -173,7 +176,7 @@ public int[] sort(int[] toSort) {
 }
 ```
 
-Snippet 10 - Big O:
+Snippet 10 - Big O:(n)
 ```java
 import java.util.Random;
 
