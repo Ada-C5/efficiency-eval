@@ -1,3 +1,4 @@
+#Justine Winnie 4.19.2016
 # Evaluating Efficiency
 
 1. Read the following article on Big O: [Big O Notation & Complexity in Ruby](https://samurails.com/interview/big-o-notation-complexity-ruby/)
@@ -26,6 +27,9 @@ Snippet 1 - Big O:
  +    puts color_string.colorize(color[0])
  +  end
  +end
+
+ Efficiency: linear
+ O(n)
 ```
 
 Snippet 2 - Big O:
@@ -39,6 +43,9 @@ Snippet 2 - Big O:
  +      return false
  +    end
  +  end
+
+ Efficiency: constant
+ O(1)
 ```
 
 Snippet 3 - Big O:
@@ -59,6 +66,9 @@ Snippet 3 - Big O:
  +		end
  +    # draws blank spaces or correct guesses under ice cream
  +  end
+
+ Efficiency: linear
+ O(n)
 ```
 
 Snippet 4 - Big O:
@@ -72,6 +82,9 @@ def overall_mood(entries)
   end
   return emoticons.max_by{|k,v| v}[0]
 end
+
+Efficiency: linear
+O(n)
 ```
 
 Snippet 5 - Big O:
@@ -96,6 +109,9 @@ Snippet 5 - Big O:
  +  largest = all.max_by{|key, value| value}
  +  puts "#{largest.keys} is most common mood"
  +end
+
+ Efficiency: linear
+ O(n)
 ```
 
 Snippet 6 - Big O:
@@ -126,6 +142,9 @@ Snippet 6 - Big O:
  +    return "The most common mood is :-|"
  +  end
  +end
+
+ Efficiency: exponential
+ O(n^2)
 ```
 
 Snippet 7 - Big O:
@@ -139,6 +158,9 @@ for j in 2..num.length
 	end
 	num[i+1] = key
 end
+
+Efficiency: exponential
+O(n^2)
 ```
 
 Snippet 8 - Big O:
@@ -151,6 +173,9 @@ n.times do |i|
   # Yep, in ruby I can do that, no aux variable. w00t!
   a[i], a[index_min] = a[index_min], a[i] if index_min != i
 end
+
+Efficiency: exponential
+O(n^2)
 ```
 
 Snippet 9 - Big O:
@@ -171,6 +196,9 @@ public int[] sort(int[] toSort) {
   }
   return toSort;
 }
+
+Efficiency: exponential
+O(n^2)
 ```
 
 Snippet 10 - Big O:
@@ -226,4 +254,6 @@ public class GoBozo {
 		return true;
 	}
 }
+
+Random sort: O(n*n!) or worst case scenario, infinite...
 ```
