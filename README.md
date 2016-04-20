@@ -17,7 +17,7 @@ Snippet EX - Big O: Answer given for this first example: O(n^2)
  +  end
 ```
 
-Snippet 1 - Big O:
+Snippet 1 - Big O: O(n)
 ```ruby
 +def print_rainbow(array)
  +  array.each do |element|
@@ -28,7 +28,7 @@ Snippet 1 - Big O:
  +end
 ```
 
-Snippet 2 - Big O:
+Snippet 2 - Big O: O(1)
 ```ruby
 +  def lose?
  +    if @number_of_guesses == 0
@@ -42,6 +42,7 @@ Snippet 2 - Big O:
 ```
 
 Snippet 3 - Big O:
+#since there are three iterations I am assuming that the big o notation will be 3(On)
 ```ruby
 +  def draw_guesses
  +  	# split word and put letters in array
@@ -61,20 +62,21 @@ Snippet 3 - Big O:
  +  end
 ```
 
-Snippet 4 - Big O:
+Snippet 4 - Big O:2(On)
 ```ruby
+#this method looks as if it has two iteration.
 def overall_mood(entries)
   return nil if entries.length == 0
   emoticons = Hash.new(0)
-  entries.each do |entry|
+  entries.each do |entry| #iteration
     emoticon = analyze_mood(entry)
     emoticons[emoticon] += 1
   end
-  return emoticons.max_by{|k,v| v}[0]
+  return emoticons.max_by{|k,v| v}[0] #iteration
 end
 ```
 
-Snippet 5 - Big O:
+Snippet 5 - Big O:O3(n) or maybe a log
 ```ruby
 +def overall_mood
  +  all = {
@@ -82,9 +84,10 @@ Snippet 5 - Big O:
  +    negative: 0,
  +    meh: 0
  +  }
- +  text.each do |aline|
- +    line = strip_punctuation(aline)
- +    face = analyze_mood(line)
+ +  text.each do |aline| #iteration
+ +    line = strip_punctuation(aline)#iteration it has to go through each index and remove the punctuation the more data the longer it will take it is a linear relationship
+ +    face = analyze_mood(line) #this also looks like an iteration linear relationship
+        #the if statements and the hash looks should take the same amount of time regardless of the amount of data
  +    if face == ":-)"
  +      all[:positive] +=1
  +    if face == ":-("
@@ -93,19 +96,19 @@ Snippet 5 - Big O:
  +      all[:meh] +=1
  +    end
  +  end
- +  largest = all.max_by{|key, value| value}
+ +  largest = all.max_by{|key, value| value} #iteration linear relationship
  +  puts "#{largest.keys} is most common mood"
  +end
 ```
 
-Snippet 6 - Big O:
+Snippet 6 - Big O: O(n)
 ```ruby
 +def overall_mood(array)
  +  happy_moods = []
  +  sad_moods = []
  +  neutral_moods =[]
- +  array.each do |line|
- +    moods = analyze_mood(line)
+ +  array.each do |line| #iteration liner relationship O(n)
+ +    moods = analyze_mood(line) #O(n)
  +    if moods == ":-)"
  +      happy_moods << moods
  +    elsif moods == ":-("
@@ -114,9 +117,9 @@ Snippet 6 - Big O:
  +      neutral_moods << moods
  +    end
  +  end
- +  happy_length = happy_moods.length
- +  sad_length = sad_moods.length
- +  neutral_length = neutral_moods.length
+ +  happy_length = happy_moods.length #O(1)
+ +  sad_length = sad_moods.length #O(1)
+ +  neutral_length = neutral_moods.length #O(1)
  +
  +  if happy_length > sad_length && happy_length > neutral_length
  +    return "The most common mood is :-)"
@@ -128,11 +131,12 @@ Snippet 6 - Big O:
  +end
 ```
 
-Snippet 7 - Big O:
-```ruby
-for j in 2..num.length
+Snippet 7 - Big O:O(N^2)
+```ruby #it looks as if there is a loop within a loop
+for j in 2..num.length#O(n) constant
 	key = num[j]
 	i = j - 1
+
 	while i > 0 and num[i] > key
 		num[i+1] = num[i]
 		i = i - 1
@@ -141,8 +145,8 @@ for j in 2..num.length
 end
 ```
 
-Snippet 8 - Big O:
-```ruby
+Snippet 8 - Big O:O(n^2)
+```ruby #another loop within a loop
 n.times do |i|
   index_min = i
   (i + 1).upto(n) do |j|
@@ -153,7 +157,7 @@ n.times do |i|
 end
 ```
 
-Snippet 9 - Big O:
+Snippet 9 - Big O: two for loops O(n^2)
 ```java
 public int[] sort(int[] toSort) {
   for (int i = 0; i < toSort.length -1; i++) {
@@ -201,6 +205,7 @@ public class GoBozo {
 		Random rand = new Random();
 
 		// Continue until sorted
+    // while loop which is a O(n)
 		while (!isSorted(arValues)) {
 			// Pick two values at random.
 			slot1 = rand.nextInt(arValues.length);
