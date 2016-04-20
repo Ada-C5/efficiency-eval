@@ -17,7 +17,7 @@ Snippet EX - Big O: Answer given for this first example: O(n^2)
  +  end
 ```
 
-Snippet 1 - Big O:
+Snippet 1
 ```ruby
 +def print_rainbow(array)
  +  array.each do |element|
@@ -27,8 +27,9 @@ Snippet 1 - Big O:
  +  end
  +end
 ```
+ex1 - Big O: O(n) seems like it is iterating the array loop just once
 
-Snippet 2 - Big O:
+Snippet 2
 ```ruby
 +  def lose?
  +    if @number_of_guesses == 0
@@ -39,15 +40,16 @@ Snippet 2 - Big O:
  +      return false
  +    end
  +  end
-```
+ ```
+ ex2. Big O: O(1) there isn't even an argument to adjust, it just checks the @number_of_guesses one time
 
-Snippet 3 - Big O:
+Snippet 3
 ```ruby
 +  def draw_guesses
  +  	# split word and put letters in array
  +    until @letter_array.length == @word.length
- +      	@word.split("").each do |letter|
- +    	@letter_array.push(letter)
+ +     	@word.split("").each do |letter|
+ +    	   @letter_array.push(letter)
  +      end
  +    	word_length = @letter_array.length
  +    	word_length.times do
@@ -60,6 +62,7 @@ Snippet 3 - Big O:
  +    # draws blank spaces or correct guesses under ice cream
  +  end
 ```
+ex3 - Big O: O(n)  definitely not sure about this one. even though i see what look like loops within loops, it feels like the initial 'until' call is actually just doing one thing, which is making the @letter_array.length == @word.length by pushing letters into it, so that seems linear. after that i think it will move on to the word_length.times part which also seems linear, and then the last part which is outside of that loop is also linear....it's tough when you can't see the rest of the code.  reading other people's code is hard!
 
 Snippet 4 - Big O:
 ```ruby
@@ -73,6 +76,7 @@ def overall_mood(entries)
   return emoticons.max_by{|k,v| v}[0]
 end
 ```
+ex4 - big O: O(n^2)  looks like the entries.each loop is exponential, because it is going to go through each entry and adjust the value for emoticons[emoticon] every time with another linear method.  after that though to be able to return the proper value, it needs to do a max_by enumerable, which seems like it will be exponential because it will need to check values against each other to find the max. n^2 + n^2 = 2n^2, which simplifies back to n^2
 
 Snippet 5 - Big O:
 ```ruby
@@ -83,8 +87,8 @@ Snippet 5 - Big O:
  +    meh: 0
  +  }
  +  text.each do |aline|
- +    line = strip_punctuation(aline)
- +    face = analyze_mood(line)
+ +    line = strip_punctuation(aline)   #- linear
+ +    face = analyze_mood(line)         #- linear (at least going by my method for analyze_mood)
  +    if face == ":-)"
  +      all[:positive] +=1
  +    if face == ":-("
@@ -97,6 +101,8 @@ Snippet 5 - Big O:
  +  puts "#{largest.keys} is most common mood"
  +end
 ```
+ex 5 - big O: O(n^2) seems like to create local variable 'line', it is linear, and then i had to go by the method that i wrote for analyze_mood, which i'm pretty sure was linear, so n^2, but then at the end they used a max_by method which again seems like it will need to hold values and use them to compare to other values, which is exponential. together they would make 2n^2, but we lost that coefficient
+
 
 Snippet 6 - Big O:
 ```ruby
@@ -105,7 +111,7 @@ Snippet 6 - Big O:
  +  sad_moods = []
  +  neutral_moods =[]
  +  array.each do |line|
- +    moods = analyze_mood(line)
+ +    moods = analyze_mood(line)  #my method for this was linear
  +    if moods == ":-)"
  +      happy_moods << moods
  +    elsif moods == ":-("
@@ -127,6 +133,7 @@ Snippet 6 - Big O:
  +  end
  +end
 ```
+ex 6 - big O: O(n^2)  I don't think i have any other option but to use my method for analyze_mood which i'm pretty sure was linear. the only loop in this method is asking us to go through each line and do something linear, so it seems like n * n which will be n^2
 
 Snippet 7 - Big O:
 ```ruby
@@ -141,6 +148,8 @@ for j in 2..num.length
 end
 ```
 
+ex 7 = Big O: O(n) this code confused the crap out of me.  i even tried to run it in irb to see what the hell it was doing and it kept just giving me error messages.  i assumed that num was an array since we could call .length on it and use indexing to get out values, so i guess the for loop is iterating through and assigning a value to 'key' (which is a misleading variable name if you ask me) and then assigning a value to 'i', then we jump into the while loop which also seems like it is linear, so together i think this might be exponential, but i'm really not sure what's happening here.  also apparently i have forgotten how to end sentences and use proper grammar...
+
 Snippet 8 - Big O:
 ```ruby
 n.times do |i|
@@ -152,6 +161,7 @@ n.times do |i|
   a[i], a[index_min] = a[index_min], a[i] if index_min != i
 end
 ```
+ex 8 - big O: O(n^2) exponential  . looks like a loop within a loop
 
 Snippet 9 - Big O:
 ```java
@@ -172,6 +182,8 @@ public int[] sort(int[] toSort) {
   return toSort;
 }
 ```
+
+ex 9 - big O: O(n^2) i've never seen java, but this looks like a for loop within a for loop, which seems exponential
 
 Snippet 10 - Big O:
 ```java
@@ -227,3 +239,4 @@ public class GoBozo {
 	}
 }
 ```
+ex 10 - this just looks terrible, big O = awful.  is that the technical term?
