@@ -27,6 +27,8 @@ Snippet 1 - Big O:
  +  end
  +end
 ```
+ANS 1: O(n) linear
+
 
 Snippet 2 - Big O:
 ```ruby
@@ -40,6 +42,8 @@ Snippet 2 - Big O:
  +    end
  +  end
 ```
+ANS 2: O(1) constant
+
 
 Snippet 3 - Big O:
 ```ruby
@@ -60,6 +64,8 @@ Snippet 3 - Big O:
  +    # draws blank spaces or correct guesses under ice cream
  +  end
 ```
+ANS 3: O(n) linear
+
 
 Snippet 4 - Big O:
 ```ruby
@@ -73,6 +79,8 @@ def overall_mood(entries)
   return emoticons.max_by{|k,v| v}[0]
 end
 ```
+ANS 4: O(n) linear
+
 
 Snippet 5 - Big O:
 ```ruby
@@ -97,6 +105,8 @@ Snippet 5 - Big O:
  +  puts "#{largest.keys} is most common mood"
  +end
 ```
+ANS 5: O(n) linear
+
 
 Snippet 6 - Big O:
 ```ruby
@@ -127,6 +137,8 @@ Snippet 6 - Big O:
  +  end
  +end
 ```
+ANS 6: O(n) linear
+
 
 Snippet 7 - Big O:
 ```ruby
@@ -140,6 +152,7 @@ for j in 2..num.length
 	num[i+1] = key
 end
 ```
+ANS 7: O(n^2) exponential
 
 Snippet 8 - Big O:
 ```ruby
@@ -152,6 +165,8 @@ n.times do |i|
   a[i], a[index_min] = a[index_min], a[i] if index_min != i
 end
 ```
+ANS 8: O(n^2) exponential
+
 
 Snippet 9 - Big O:
 ```java
@@ -172,6 +187,9 @@ public int[] sort(int[] toSort) {
   return toSort;
 }
 ```
+ANS 9: O(n^2) exponential
+
+
 
 Snippet 10 - Big O:
 ```java
@@ -227,3 +245,4 @@ public class GoBozo {
 	}
 }
 ```
+ANS 10: O((n+1)!)
