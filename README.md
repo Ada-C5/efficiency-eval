@@ -27,6 +27,7 @@ Snippet 1 - Big O:
  +  end
  +end
 ```
+<!-- Answer to Snippet 1:  O(n), linear -->
 
 Snippet 2 - Big O:
 ```ruby
@@ -40,6 +41,7 @@ Snippet 2 - Big O:
  +    end
  +  end
 ```
+<!-- Answer to Snippet 2:  O(1), constant -->
 
 Snippet 3 - Big O:
 ```ruby
@@ -60,6 +62,7 @@ Snippet 3 - Big O:
  +    # draws blank spaces or correct guesses under ice cream
  +  end
 ```
+<!-- Answer to Snippet 3:  O(n), linear.  This has a coefficient of 3, but since that doesn't matter I left it out.  The @word.length is an O(n) and the @dashes_array is an O(n) as well as the @word_length.times is O(n).  Adding those is 3_O(n).   -->
 
 Snippet 4 - Big O:
 ```ruby
@@ -73,6 +76,7 @@ def overall_mood(entries)
   return emoticons.max_by{|k,v| v}[0]
 end
 ```
+<!-- Answer to Snippet 4:  O(n), linear.  There is only one loop so it's linear. -->
 
 Snippet 5 - Big O:
 ```ruby
@@ -97,6 +101,7 @@ Snippet 5 - Big O:
  +  puts "#{largest.keys} is most common mood"
  +end
 ```
+<!-- Answer to Snippet 5:  O(n), linear.  The max_by function does not effect the efficiency very much. -->
 
 Snippet 6 - Big O:
 ```ruby
@@ -127,6 +132,7 @@ Snippet 6 - Big O:
  +  end
  +end
 ```
+<!-- Answer to Snippet 6: O(n), linear.  There is no nesting and it runs through the loop.  The second one would make a coefficient so that is dropped 2 O(n). -->
 
 Snippet 7 - Big O:
 ```ruby
@@ -140,6 +146,7 @@ for j in 2..num.length
 	num[i+1] = key
 end
 ```
+<!-- Answer to Snippet 7: O(n^2), exponential.  There is a nested loop.   -->
 
 Snippet 8 - Big O:
 ```ruby
@@ -152,6 +159,7 @@ n.times do |i|
   a[i], a[index_min] = a[index_min], a[i] if index_min != i
 end
 ```
+<!-- Answer to Snippet 8: O(n^2)   -->
 
 Snippet 9 - Big O:
 ```java
@@ -172,6 +180,7 @@ public int[] sort(int[] toSort) {
   return toSort;
 }
 ```
+<!-- Answer to Snippet 9: Olog(n)   -->
 
 Snippet 10 - Big O:
 ```java
@@ -189,6 +198,7 @@ public class GoBozo {
 			System.out.println("Element: " + i + " - " + arMyValues[i]);
 		}
 	}
+  // Answer to Snippet 10:  Olog(n)
 
 	// BozoSort Algorithm
 	// Warning: Highly inefficient and not recommended for large arrays.
