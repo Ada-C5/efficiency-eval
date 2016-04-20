@@ -17,7 +17,7 @@ Snippet EX - Big O: Answer given for this first example: O(n^2)
  +  end
 ```
 
-Snippet 1 - Big O:
+Snippet 1 - Big O: linear O(n)
 ```ruby
 +def print_rainbow(array)
  +  array.each do |element|
@@ -28,7 +28,7 @@ Snippet 1 - Big O:
  +end
 ```
 
-Snippet 2 - Big O:
+Snippet 2 - Big O: n
 ```ruby
 +  def lose?
  +    if @number_of_guesses == 0
@@ -41,9 +41,9 @@ Snippet 2 - Big O:
  +  end
 ```
 
-Snippet 3 - Big O:
+Snippet 3 - Big O: O(n^2)
 ```ruby
-+  def draw_guesses
+ +  def draw_guesses
  +  	# split word and put letters in array
  +    until @letter_array.length == @word.length
  +      	@word.split("").each do |letter|
@@ -57,11 +57,11 @@ Snippet 3 - Big O:
  +		@dashes_array.each do |dash|
  +			print dash
  +		end
- +    # draws blank spaces or correct guesses under ice cream
+ +    # draws blank spaces or correct guesses under ice cream how useful
  +  end
 ```
 
-Snippet 4 - Big O:
+Snippet 4 - Big O: n
 ```ruby
 def overall_mood(entries)
   return nil if entries.length == 0
@@ -74,7 +74,7 @@ def overall_mood(entries)
 end
 ```
 
-Snippet 5 - Big O:
+Snippet 5 - Big O: n
 ```ruby
 +def overall_mood
  +  all = {
@@ -98,7 +98,7 @@ Snippet 5 - Big O:
  +end
 ```
 
-Snippet 6 - Big O:
+Snippet 6 - Big O: n
 ```ruby
 +def overall_mood(array)
  +  happy_moods = []
@@ -128,7 +128,7 @@ Snippet 6 - Big O:
  +end
 ```
 
-Snippet 7 - Big O:
+Snippet 7 - Big O: O(n^2)
 ```ruby
 for j in 2..num.length
 	key = num[j]
@@ -141,7 +141,7 @@ for j in 2..num.length
 end
 ```
 
-Snippet 8 - Big O:
+Snippet 8 - Big O: O(n^2)
 ```ruby
 n.times do |i|
   index_min = i
@@ -153,7 +153,7 @@ n.times do |i|
 end
 ```
 
-Snippet 9 - Big O:
+Snippet 9 - Big O: O(n^2)
 ```java
 public int[] sort(int[] toSort) {
   for (int i = 0; i < toSort.length -1; i++) {
@@ -173,7 +173,7 @@ public int[] sort(int[] toSort) {
 }
 ```
 
-Snippet 10 - Big O:
+Snippet 10 - Big O: O(logn)
 ```java
 import java.util.Random;
 
