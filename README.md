@@ -27,6 +27,7 @@ Snippet 1 - Big O:
  +  end
  +end
 ```
+****O(n^2)****
 
 Snippet 2 - Big O:
 ```ruby
@@ -40,6 +41,7 @@ Snippet 2 - Big O:
  +    end
  +  end
 ```
+****O(n)*****
 
 Snippet 3 - Big O:
 ```ruby
@@ -60,6 +62,7 @@ Snippet 3 - Big O:
  +    # draws blank spaces or correct guesses under ice cream
  +  end
 ```
+****O(n)****
 
 Snippet 4 - Big O:
 ```ruby
@@ -73,6 +76,7 @@ def overall_mood(entries)
   return emoticons.max_by{|k,v| v}[0]
 end
 ```
+****O(n)****
 
 Snippet 5 - Big O:
 ```ruby
@@ -97,6 +101,8 @@ Snippet 5 - Big O:
  +  puts "#{largest.keys} is most common mood"
  +end
 ```
+
+****O(n^2)****
 
 Snippet 6 - Big O:
 ```ruby
@@ -128,6 +134,8 @@ Snippet 6 - Big O:
  +end
 ```
 
+****O(n^2)****
+
 Snippet 7 - Big O:
 ```ruby
 for j in 2..num.length
@@ -141,6 +149,8 @@ for j in 2..num.length
 end
 ```
 
+****O(n)****
+
 Snippet 8 - Big O:
 ```ruby
 n.times do |i|
@@ -152,6 +162,7 @@ n.times do |i|
   a[i], a[index_min] = a[index_min], a[i] if index_min != i
 end
 ```
+****O(n^2)****
 
 Snippet 9 - Big O:
 ```java
@@ -172,6 +183,8 @@ public int[] sort(int[] toSort) {
   return toSort;
 }
 ```
+
+****O(n^2)****
 
 Snippet 10 - Big O:
 ```java
@@ -227,3 +240,5 @@ public class GoBozo {
 	}
 }
 ```
+
+****O(n)****
