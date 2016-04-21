@@ -17,7 +17,7 @@ Snippet EX - Big O: Answer given for this first example: O(n^2)
  +  end
 ```
 
-Snippet 1 - Big O:
+Snippet 1 - Big O: O(n) (I don't know the efficiency of the .keys method though)
 ```ruby
 +def print_rainbow(array)
  +  array.each do |element|
@@ -28,7 +28,7 @@ Snippet 1 - Big O:
  +end
 ```
 
-Snippet 2 - Big O:
+Snippet 2 - Big O: O(n)
 ```ruby
 +  def lose?
  +    if @number_of_guesses == 0
@@ -41,27 +41,27 @@ Snippet 2 - Big O:
  +  end
 ```
 
-Snippet 3 - Big O:
+Snippet 3 - Big O: O(n^2)   (This was actually O(n^2 + n)...but I think you want it more general? So O(n^2).)
 ```ruby
 +  def draw_guesses
  +  	# split word and put letters in array
- +    until @letter_array.length == @word.length
- +      	@word.split("").each do |letter|
- +    	@letter_array.push(letter)
- +      end
- +    	word_length = @letter_array.length
- +    	word_length.times do
- +    		@dashes_array.push("_ ")
+ +    until @letter_array.length == @word.length  #O(n)
+ +      	@word.split("").each do |letter|    #O(n)
+ +    	     @letter_array.push(letter)      #O(1)
+ +        end
+ +    	word_length = @letter_array.length   #O(1)
+ +    	word_length.times do   #O(n)
+ +    		@dashes_array.push("_ ")  #O(1)
  +    	end
  +    end
- +		@dashes_array.each do |dash|
+ +		@dashes_array.each do |dash| #O(n)
  +			print dash
  +		end
  +    # draws blank spaces or correct guesses under ice cream
  +  end
 ```
 
-Snippet 4 - Big O:
+Snippet 4 - Big O: O(n)
 ```ruby
 def overall_mood(entries)
   return nil if entries.length == 0
@@ -74,7 +74,7 @@ def overall_mood(entries)
 end
 ```
 
-Snippet 5 - Big O:
+Snippet 5 - Big O: O(n)
 ```ruby
 +def overall_mood
  +  all = {
@@ -93,12 +93,12 @@ Snippet 5 - Big O:
  +      all[:meh] +=1
  +    end
  +  end
- +  largest = all.max_by{|key, value| value}
+ +  largest = all.max_by{|key, value| value} #is Hash.max_by O(n)?
  +  puts "#{largest.keys} is most common mood"
  +end
 ```
 
-Snippet 6 - Big O:
+Snippet 6 - Big O: O(n)
 ```ruby
 +def overall_mood(array)
  +  happy_moods = []
@@ -128,12 +128,12 @@ Snippet 6 - Big O:
  +end
 ```
 
-Snippet 7 - Big O:
+Snippet 7 - Big O: O(n^2)
 ```ruby
-for j in 2..num.length
+for j in 2..num.length #O(n)
 	key = num[j]
 	i = j - 1
-	while i > 0 and num[i] > key
+	while i > 0 and num[i] > key #O(n)
 		num[i+1] = num[i]
 		i = i - 1
 	end
@@ -141,7 +141,7 @@ for j in 2..num.length
 end
 ```
 
-Snippet 8 - Big O:
+Snippet 8 - Big O: O(n^2)
 ```ruby
 n.times do |i|
   index_min = i
@@ -153,12 +153,12 @@ n.times do |i|
 end
 ```
 
-Snippet 9 - Big O:
+Snippet 9 - Big O: O(n^2)
 ```java
 public int[] sort(int[] toSort) {
-  for (int i = 0; i < toSort.length -1; i++) {
+  for (int i = 0; i < toSort.length -1; i++) { //O(n)
     boolean swapped = false;
-    for (int j = 0; j < toSort.length - 1 - i; j++) {
+    for (int j = 0; j < toSort.length - 1 - i; j++) { //O(n)
       if(toSort[j] > toSort[j+1]) {
         swapped = true;
         int swap = toSort[j+1];
@@ -173,7 +173,7 @@ public int[] sort(int[] toSort) {
 }
 ```
 
-Snippet 10 - Big O:
+Snippet 10 - Big O: O(n^2)
 ```java
 import java.util.Random;
 
@@ -185,7 +185,7 @@ public class GoBozo {
 		System.out.println("Array sorted... you bozo!");
 
 		// Loop through the array and show it sorted.
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 5; i++) { //O(n)
 			System.out.println("Element: " + i + " - " + arMyValues[i]);
 		}
 	}
@@ -201,7 +201,7 @@ public class GoBozo {
 		Random rand = new Random();
 
 		// Continue until sorted
-		while (!isSorted(arValues)) {
+		while (!isSorted(arValues)) { //O(n)
 			// Pick two values at random.
 			slot1 = rand.nextInt(arValues.length);
 			slot2 = rand.nextInt(arValues.length);
@@ -217,7 +217,7 @@ public class GoBozo {
 	// than the one after it. If it is, then it isn't sorted.
 	// Returns true if the array is sorted.
 	private static boolean isSorted(int[] arValues) {
-		for (int i = 0; i < arValues.length - 1; i++) {
+		for (int i = 0; i < arValues.length - 1; i++) { //O(n)
 			if (arValues[i] > arValues[i + 1]) {
 				return false;
 			}
