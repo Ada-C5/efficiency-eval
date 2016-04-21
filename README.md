@@ -17,7 +17,7 @@ Snippet EX - Big O: Answer given for this first example: O(n^2)
  +  end
 ```
 
-Snippet 1 - Big O:
+Snippet 1 - Big O: O(n) - This would depend on the length of the array.
 ```ruby
 +def print_rainbow(array)
  +  array.each do |element|
@@ -28,7 +28,7 @@ Snippet 1 - Big O:
  +end
 ```
 
-Snippet 2 - Big O:
+Snippet 2 - Big O: O(1) - I think this is constant, because it's checking the value of only one instance variable.
 ```ruby
 +  def lose?
  +    if @number_of_guesses == 0
@@ -41,7 +41,7 @@ Snippet 2 - Big O:
  +  end
 ```
 
-Snippet 3 - Big O:
+Snippet 3 - Big O: O(n^2) - I think that since we have to touch letter_array and dashes_array in two separate loops we would call this O(n^2)
 ```ruby
 +  def draw_guesses
  +  	# split word and put letters in array
@@ -61,7 +61,7 @@ Snippet 3 - Big O:
  +  end
 ```
 
-Snippet 4 - Big O:
+Snippet 4 - Big O: At first glance I thought this would be O(n), but since I do not know what the analyze_mood method does, I cannot be sure of that (maybe it has 10 nested loops, or something). Is O(n) * O(n) a thing?
 ```ruby
 def overall_mood(entries)
   return nil if entries.length == 0
@@ -74,7 +74,7 @@ def overall_mood(entries)
 end
 ```
 
-Snippet 5 - Big O:
+Snippet 5 - Big O: O(n^2) We first go through the if loop, and then through the max_by block.
 ```ruby
 +def overall_mood
  +  all = {
@@ -98,7 +98,7 @@ Snippet 5 - Big O:
  +end
 ```
 
-Snippet 6 - Big O:
+Snippet 6 - Big O: O(n^2)
 ```ruby
 +def overall_mood(array)
  +  happy_moods = []
@@ -128,7 +128,7 @@ Snippet 6 - Big O:
  +end
 ```
 
-Snippet 7 - Big O:
+Snippet 7 - Big O: O(n)
 ```ruby
 for j in 2..num.length
 	key = num[j]
@@ -141,7 +141,7 @@ for j in 2..num.length
 end
 ```
 
-Snippet 8 - Big O:
+Snippet 8 - Big O: O(n^2) - Due to the nested loop.
 ```ruby
 n.times do |i|
   index_min = i
@@ -153,7 +153,7 @@ n.times do |i|
 end
 ```
 
-Snippet 9 - Big O:
+Snippet 9 - Big O: O(n^2) - Honestly, I feel like I'm guessing at all of these. I've been reading and this concept is just not sinking in.
 ```java
 public int[] sort(int[] toSort) {
   for (int i = 0; i < toSort.length -1; i++) {
@@ -173,7 +173,7 @@ public int[] sort(int[] toSort) {
 }
 ```
 
-Snippet 10 - Big O:
+Snippet 10 - Big O: 
 ```java
 import java.util.Random;
 
