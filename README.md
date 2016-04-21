@@ -130,7 +130,7 @@ Snippet 6 - Big O: O(n^3)
  +end
 ```
 
-Snippet 7 - Big O:
+Snippet 7 - Big O: O(n)
 ```ruby
 for j in 2..num.length
 	key = num[j]
@@ -155,7 +155,7 @@ n.times do |i|
 end
 ```
 
-Snippet 9 - Big O: 
+Snippet 9 - Big O: O(n^2)
 ```java
 public int[] sort(int[] toSort) {
   for (int i = 0; i < toSort.length -1; i++) {
@@ -175,7 +175,7 @@ public int[] sort(int[] toSort) {
 }
 ```
 
-Snippet 10 - Big O:
+Snippet 10 - Big O: O(n)
 ```java
 import java.util.Random;
 
